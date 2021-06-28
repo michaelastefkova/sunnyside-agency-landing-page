@@ -1,0 +1,158 @@
+// *LAYOUTS STYLES
+
+// NAVIGATION
+.nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 2em;
+}
+
+// TILES
+.tiles {
+	display: grid;
+	width: 100%;
+
+	&__element {
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 110vw;
+		padding: 2em;
+		text-align: center;
+
+		&-img {
+			height: 90vw;
+		}
+
+		&-imgbg {
+			height: 37em;
+			text-align: center;
+		}
+
+		&__textContainer {
+			padding: 23em 2em 1em;
+		}
+	}
+}
+
+// CLIENT TESTIMONIALS
+.clientTest {
+	display: grid;
+	padding: 3em;
+
+	&__element {
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+// PHOTO GALLERY
+.photoGallery {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, 50vw);
+}
+
+// FOOTER
+.footer {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+	padding: 1em;
+
+	&__linkContainer,
+	&__socialLinks {
+		display: flex;
+		justify-content: space-around;
+		margin: 2em 1em;
+	}
+}
+
+@media screen and (min-width: 751px) {
+	// TILES
+	.tiles {
+		grid-template-columns: repeat(2, 1fr);
+
+		&__element {
+			padding: 6em;
+			height: 40vw;
+			text-align: left;
+			justify-content: center;
+			align-items: initial;
+
+			&-img {
+				height: 40vw;	
+			}
+
+			&:nth-child(2) {
+				order: -1;
+			}
+
+			&-imgbg {
+				height: 40vw;
+			}
+
+			&__textContainer {
+				padding: 26vw 9vw 1em;
+			}
+		}
+	}
+
+	// CLIENT TESTIMONIALS
+	.clientTest {
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 0.125fr 1fr;
+		gap: 0px 0px;
+		grid-template-areas:
+			"block1 block1 block1"
+			"block2 block3 block4";
+	}
+
+	.block1 {
+		grid-area: block1;
+	}
+	.block2 {
+		grid-area: block2;
+	}
+	.block3 {
+		grid-area: block3;
+	}
+	.block4 {
+		grid-area: block4;
+	}
+
+	// PHOTO GALLERY
+	.photoGallery {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: 30vw;
+	}
+}
+
+@media screen and (min-width: 751px) and (max-width: 1028px) {
+	// TILES
+	.tiles {
+		&__element {
+			padding: 3em;
+			height: 50vw;
+
+			&-img {
+				height: 50vw;
+			}
+
+			&-imgbg {
+				height: 50vw;
+			}
+
+			&__textContainer {
+				padding: 29vw 2em 1em;
+			}
+		}
+	}
+}
